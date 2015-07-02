@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;Learning-Go&gt;">
+    <CLASSES>
+      <root url="file://$USER_HOME$/go/src/launchpad.net" />
+      <root url="file://$USER_HOME$/go/src/github.com" />
+      <root url="file://$USER_HOME$/go/src/.DS_Store" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://$USER_HOME$/go/src/github.com/gophersjp/go/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/jehiah/json2csv/.git" />
+    </excluded>
+  </library>
+</component>
