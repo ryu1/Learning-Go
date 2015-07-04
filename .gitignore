@@ -1,3 +1,18 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
 Learning-Go.iml
+src/debugTest/debugTest_darwin_386
+src/debugTest/debugTest_darwin_amd64
+src/debugTest/debugTest_freebsd_386
+src/debugTest/debugTest_freebsd_amd64
+src/debugTest/debugTest_freebsd_arm
+src/debugTest/debugTest_linux_386
+src/debugTest/debugTest_linux_amd64
+src/debugTest/debugTest_linux_arm
+src/debugTest/debugTest_netbsd_386
+src/debugTest/debugTest_netbsd_amd64
+src/debugTest/debugTest_netbsd_arm
+src/debugTest/debugTest_openbsd_386
+src/debugTest/debugTest_openbsd_amd64
+src/debugTest/debugTest_windows_386.exe
+src/debugTest/debugTest_windows_amd64.exe

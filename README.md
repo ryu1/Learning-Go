@@ -1,6 +1,6 @@
 # Learning-Go
 
-## Setting
+## Settings
 
 ### Go
 
@@ -17,6 +17,25 @@
 	export GOPATH="$HOME/go"
 	export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 	</pre>
+	
+	
+### Gox - Simple Go Cross Compilation
+
+1. Goxをインストール
+
+	```
+	$ go get github.com/mitchellh/gox
+	...
+	$ gox -h
+	...
+	```
+
+2. ツールチェーンをビルドする
+
+	```
+	$ gox -build-toolchain
+	...
+	```
 
 
 ### Debugging
@@ -128,7 +147,9 @@
 	[Inferior 1 (process 92631) exited normally]
 	```
 	
-### Build
+## Build
+
+#### Goで普通にビルドする
 
 1. ビルドする
 
@@ -137,3 +158,11 @@
     <pre>
     GOOS=linux GOARCH=arm GOARM=5 GOBIN=../../bin go install
     </pre>
+
+#### Goxでビルドする
+
+1. ビルドする
+
+	```
+	$ gox
+	```
