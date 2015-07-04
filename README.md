@@ -151,17 +151,18 @@
 
 #### Goで普通にビルドする
 
-1. ビルドする
+1. プラットフォームを指定してビルドする
 
-    以下を実行すると、binの配下にバイナリ実行形式が生成されます。
+	ARMv5向けの実行形式を生成する場合は、以下のようにします。
+   また、binの配下にバイナリ実行形式が生成されます。
     
-    <pre>
-    GOOS=linux GOARCH=arm GOARM=5 GOBIN=../../bin go install
-    </pre>
+	<pre>
+	GOOS=linux GOARCH=arm GOARM=5 GOBIN=../../bin go install
+	</pre>
 
 #### Goxでビルドする
 
-1. ビルドする
+1. 各プラットフォームの実行形式を生成する
 
 	```
 	$ gox
