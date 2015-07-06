@@ -20,6 +20,7 @@
 	export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 	</pre>
 
+<!-- 
 #### wfarr/goenvでインストール
 
 1. goenvをgithubから取得する
@@ -63,6 +64,39 @@
 		$ goenv rehash
 		$ go version
 		```
+-->
+
+#### cryptojuice/gobrewでインストール
+
+1. goenvをgithubから取得する
+
+	```
+	$ git clone git://github.com/cryptojuice/gobrew.git ~/.gobrew
+	```
+
+2. .zshrcに以下を追加する
+
+	```
+	export PATH="$HOME/.gobrew/bin:$PATH"
+	eval "$(gobrew init -)"
+	```
+
+3. 任意のバージョンのGoをインストールする
+
+	```
+	$ gobrew install 1.4.2
+	$ gobrew use 1.4.2
+	$ gobrew rehash
+	$ go version
+	```
+
+4. gomの_vendorディレクトリを$GOPATHに設定する
+
+	```
+	$ cd _vendor
+	$ gobrew workspace set
+	$ echo $GOPATH
+	```
 
 ### Gox - Simple Go Cross Compilation
 
@@ -77,10 +111,18 @@
 
 2. ツールチェーンをビルドする
 
+	* goxだけのとき
+
 	```
 	$ gox -build-toolchain
 	...
 	```
+	
+	* gomを使用しているとき
+	```
+	$ gom exec gox -build-toolchain
+	```
+
 
 ### gom - Go Manager
 
@@ -109,6 +151,7 @@
 
 	そして、`gom install`を実行すると、
 	_vendorディレクトリに配下に配置される。
+
 
 
 ## Debugging
@@ -220,6 +263,12 @@
 	[Inferior 1 (process 92631) exited normally]
 	```
 	
+## Unit Test
+
+```
+$ gom exec go test -v ./src/...
+```
+
 ## Build
 
 #### Goで普通にビルドする
@@ -237,6 +286,14 @@
 
 1. 各プラットフォームの実行形式を生成する
 
+	* goxのみの場合
+
 	```
 	$ gox
+	```
+	
+	* gomを使用しているとき
+	
+	```
+	$ gom exec gox ./src/...
 	```
