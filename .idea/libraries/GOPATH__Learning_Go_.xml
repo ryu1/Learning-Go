@@ -9,6 +9,8 @@
     <SOURCES />
     <excluded>
       <root url="file://$PROJECT_DIR$" />
+      <root url="file://$USER_HOME$/go/src/github.com/mitchellh/gox/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/mitchellh/iochan/.git" />
       <root url="file://$USER_HOME$/go/src/github.com/gophersjp/go/.git" />
       <root url="file://$USER_HOME$/go/src/github.com/jehiah/json2csv/.git" />
     </excluded>

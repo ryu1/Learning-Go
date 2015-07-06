@@ -1,0 +1,2 @@
+gom "github.com/mitchellh/gox"
+gom 'github.com/r7kamura/gospel'

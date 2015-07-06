@@ -4,6 +4,8 @@
 
 ### Go
 
+#### Homebrewでインストールする
+
 1. Goをインストール
 
 	<pre>
@@ -17,8 +19,51 @@
 	export GOPATH="$HOME/go"
 	export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 	</pre>
+
+#### wfarr/goenvでインストール
+
+1. goenvをgithubから取得する
+
+	```
+	$ git clone -b v0.0.5 https://github.com/wfarr/goenv.git ~/.goenv
+	```
 	
+2. .zshrcに以下を追加する
+
+	```
+	export PATH="$HOME/.goenv/bin:$PATH"
+	eval "$(goenv init -)"
+	GOPATH="$HOME/go"
+	export PATH="$GOPATH/bin:$PATH"
+	```
 	
+	_GOROOTは、goenvにより自動で設定されるので不要_
+
+3. 任意のバージョンのGoをインストールする
+
+	* Global
+	
+		```
+		$ goenv install 1.4
+		$ goenv global 1.4
+		$ goenv rehash
+		$ go version
+		```
+		
+		_Howbrewで既にインストールしていたGoがあるとバッティングするので、
+		Howbrew版は削除する必要がある。_
+
+	* Local
+
+		```
+		$ goenv install 1.3
+		$ mkdir project_home
+		$ cd project_home
+		$ goenv local 1.3
+		$ goenv rehash
+		$ go version
+		```
+
 ### Gox - Simple Go Cross Compilation
 
 1. Goxをインストール
@@ -37,8 +82,36 @@
 	...
 	```
 
+### gom - Go Manager
 
-### Debugging
+1. gomをインストール
+
+	```
+	go get github.com/mattn/gom
+	```
+
+2. プロジェクトにGomfileを作成する
+
+	```
+	gom gen gomfile
+	```
+	
+3. 依存するライブラリを追加する
+	
+	例えば、goxとgospelを追加したい場合は、
+	Gomfileに以下のように記述する。
+	
+	```
+	$ cat Gomfile
+	gom "github.com/mitchellh/gox"
+	gom 'github.com/r7kamura/gospel'
+	```
+
+	そして、`gom install`を実行すると、
+	_vendorディレクトリに配下に配置される。
+
+
+## Debugging
 
 1. GDBインストール
 
@@ -154,7 +227,7 @@
 1. プラットフォームを指定してビルドする
 
 	ARMv5向けの実行形式を生成する場合は、以下のようにします。
-   また、binの配下にバイナリ実行形式が生成されます。
+   すると、binの配下にバイナリ実行形式が生成されます。
     
 	<pre>
 	GOOS=linux GOARCH=arm GOARM=5 GOBIN=../../bin go install
