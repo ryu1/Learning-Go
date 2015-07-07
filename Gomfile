@@ -1,2 +1,5 @@
 gom "github.com/mitchellh/gox"
 gom 'github.com/r7kamura/gospel'
+gom 'github.com/golang/lint/golint'
+gom "github.com/BurntSushi/toml"
+gom "github.com/go-godo/godo"
