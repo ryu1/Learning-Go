@@ -17,3 +17,5 @@ src/debugTest/debugTest_openbsd_amd64
 src/debugTest/debugTest_windows_386.exe
 src/debugTest/debugTest_windows_amd64.exe
 godobin-1.4.5
+src/xlsx/test.xlsm
+src/xlsx/xlsx
